@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "React learning project instructed by Akshay Saini",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "npx parcel hello-world.html"
   },
   "repository": {
     "type": "git",
