@@ -1,4 +1,4 @@
-let restaurants = [
+export const restaurants = [
   {
       "card": {
           "card": {
@@ -1056,4 +1056,3 @@ let restaurants = [
   }
 ]
 
- export default restaurants;
