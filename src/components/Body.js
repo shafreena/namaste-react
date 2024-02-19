@@ -1,6 +1,7 @@
 import ShimmerComponent from "./Shimmer";
 import { CDN_URL } from "../utils/constants";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const RestaurantCard = (prop) => {
   const { cloudinaryImageId, name, costForTwo, cuisines, avgRating } =
@@ -92,10 +93,13 @@ const BodyComponent = () => {
       <div className="res-card-container">
         {restaurantList.map((restaurant) => {
           return (
-            <RestaurantCard
+            <Link
               key={restaurant?.card?.card?.info?.id}
-              data={restaurant}
-            />
+              to={"/restaurants/" + restaurant?.card?.card?.info?.id}
+            >
+              {" "}
+              <RestaurantCard data={restaurant} />
+            </Link>
           );
         })}
       </div>
