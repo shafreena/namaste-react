@@ -5,24 +5,26 @@ import useOnlineStatus from "../utils/hooks/useOnlineStatus";
 const HeaderComponent = () => {
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between border border-solid border-black items-center">
       <div className="logo-container">
-        <img className="logo-img" src={LOGO_URL}></img>
+        <img className="h-[150px]" src={LOGO_URL}></img>
       </div>
 
-      <div className="nav-items">
-        <ul>
-          <li>Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
+      <div className="m-3">
+        <ul className="flex">
+          <li className="m-3 p-3 list-none text-lg">
+            Online Status : {onlineStatus ? "🟢" : "🔴"}
+          </li>
+          <li className="m-3 p-3 list-none text-lg">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="m-3 p-3 list-none text-lg">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="m-3 p-3 list-none text-lg">
             <Link to="/contact">Contact</Link>
           </li>
-          <li>Cart</li>
+          <li className="m-3 p-3 list-none text-lg">Cart</li>
         </ul>
       </div>
     </div>

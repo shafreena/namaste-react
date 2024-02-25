@@ -7,9 +7,9 @@ const RestaurantCard = (prop) => {
   const { cloudinaryImageId, name, costForTwo, cuisines, avgRating } =
     prop.data.card.card.info;
   return (
-    <div className="res-card">
+    <div className="w-[220px] h-[400px] p-2 m-3 border border-solid border-white bg-yellow-100 hover:border-black cursor-pointer">
       <img
-        className="res-img"
+        className="w-[100%] h-[200px]"
         alt="res-img"
         src={CDN_URL + cloudinaryImageId}
       ></img>
@@ -47,15 +47,17 @@ const BodyComponent = () => {
     <ShimmerComponent />
   ) : (
     <div className="body-container">
-      <div className="filters-container">
-        <div className="search">
+      <div className="flex items-center justify-center">
+        <div className="m-3">
           <input
+            className=" border border-solid border-black h-8 m-1"
             value={searchValue}
             onChange={(event) => {
               setSearchValue(event.target.value);
             }}
           ></input>
           <button
+            className="border border-solid border-green-900 bg-green-300 text-green-900 px-4 py-1 rounded-lg"
             onClick={() => {
               setRestaurantList(
                 defaultRestList.filter((restaurant) => {
@@ -71,7 +73,7 @@ const BodyComponent = () => {
         </div>
         <div className="filter">
           <button
-            className="filter-btn"
+            className="border border-solid border-green-900 bg-green-300 text-green-900 px-4 py-1 rounded-lg"
             onClick={() => {
               restaurantList.length < defaultRestList.length
                 ? setFilterBtnName("Top Rated Restaurants")
@@ -90,7 +92,7 @@ const BodyComponent = () => {
         </div>
       </div>
 
-      <div className="res-card-container">
+      <div className="flex flex-wrap m-2 justify-around">
         {restaurantList.map((restaurant) => {
           return (
             <Link
